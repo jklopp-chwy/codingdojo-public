@@ -1,50 +1,99 @@
+/*CSS RESET*/
 * {
     padding: 0px;
     margin: 0px;
 }
 
+/*Wrapper and Header*/
 #wrapper{ 
     background-color: #f8f8f8;
     width: 970px;
     height: 700px;
 }
 
-#wrapper h1, h2{
+.header h1, h2{
     display: inline-block;
     padding: 10px;
 }
 
-#wrapper h1{
+.header h1{
     font-family: 'Roboto', sans-serif;
 }
 
-#wrapper h2{
+.header h2{
     margin-left: 400px;
 }
 
+/*MAIN BODY*/
+
 .main-body {
     background-image: linear-gradient(to bottom right, black, #6F5964);
-    width: 970px;
+    width: 1000px;
     height: 700px;
 }
 
 .main-body img {
     width: 300px;
     height: 200px;
-    margin: 15px;
+    margin: 15px 10px 0px 15px;
 }
 
 .about{
     display: inline-block;
     background-color: whitesmoke;
-    width: 300px;
+    width: 600px;
     height: 200px;
     vertical-align: top;
-    margin-left: 50px;
+    margin-left: 20px;
     margin-top: 15px;
 }
 
 .about h3{
     background-color: darkgray;
     padding: 5px;
+}
+
+/*Projects*/
+
+.projects {
+    width: 300px;
+    background-color: white;
+    margin: 15px;
+    display: inline-block;
+}
+
+.projects h2 {
+    width: 270px;
+    margin: 10px;
+    Color: White;
+    background-color: grey;
+}
+
+.projects h3 {
+    background-color: grey;
+    color: white;
+}
+
+.projects img {
+    width: 270px;
+    height: auto;
+}
+
+.project_images img{
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+}
+
+.project_images li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.projects button {
+    background-color: green;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 10px 100px;
 }
