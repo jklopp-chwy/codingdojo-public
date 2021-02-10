@@ -195,4 +195,4 @@ function minMaxAvg(arr){
     return arrayTotals;
 }
 var bigArray = [0,2,3,1];
-//console.log(minMaxAvg(bigArray));
+console.log(minMaxAvg(bigArray));
