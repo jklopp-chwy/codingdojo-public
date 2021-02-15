@@ -1,14 +1,22 @@
-# x = [ [5,2,3], [15,8,9] ] 
+# x = [ [5,2,3], [10,8,9] ] 
 # students = [
-#      {'first_name':  'Michael', 'last_name' : 'Bryant'},
+#      {'first_name':  'Michael', 'last_name' : 'Jordan'},
 #      {'first_name' : 'John', 'last_name' : 'Rosales'}
 # ]
 # sports_directory = {
 #     'basketball' : ['Kobe', 'Jordan', 'James', 'Curry'],
-#     'soccer' : ['Andres', 'Ronaldo', 'Rooney']
+#     'soccer' : ['Messi', 'Ronaldo', 'Rooney']
 # }
-# z = [ {'x': 10, 'y': 30} ]
+# z = [ {'x': 10, 'y': 20} ]
 
+# x[1][0] = 15
+# print(x[1])
+# students[0]['last_name'] = 'bryant'
+# print(students)
+# sports_directory['soccer'][0] = 'Andres'
+# print(sports_directory['soccer'])
+# z[0]['y']=30
+# print(z)
 
 students = [
         {'first_name':  'Michael', 'last_name' : 'Jordan'},
@@ -18,14 +26,13 @@ students = [
     ]
 
 def iterateDictionary(some_list):
-    for i in some_list:
-        some_dict = some_list[i]
-        for x in some_dict:
-            print(x)
-
-        print(i)
-
-print(iterateDictionary(students))  
+    for i in range (len(some_list)):
+        name_dict = some_list[i]
+        for key, value in name_dict.items():
+            print(key, ':', value)
+        #print(lname)
+        #print(some_list[i])
+iterateDictionary(students)
 # should output: (it's okay if each key-value pair ends up on 2 separate lines;
 # bonus to get them to appear exactly as below!)
 # first_name - Michael, last_name - Jordan
