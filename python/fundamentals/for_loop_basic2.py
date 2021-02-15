@@ -69,38 +69,42 @@
 
 #Create a function that takes a list and returns a dictionary that has the sumTotal, average, minimum, maximum and length of the list.
 
-def ultimate(list):
-    sum = 0
-    for i in list:
-        sum = sum + i
+# def ultimate(list):
+#     sum = 0
+#     for i in list:
+#         sum = sum + i
 
-    count = 0
-    for i in list:
-            count = count + i
-    average = count/len(list)
+#     count = 0
+#     for i in list:
+#             count = count + i
+#     average = count/len(list)
 
-    min = list[0]
-    for i in list:
-        if min > i:
-            min = i
+#     min = list[0]
+#     for i in list:
+#         if min > i:
+#             min = i
 
-    max = list[0]
-    for i in list:
-        if max < i:
-            max = i
+#     max = list[0]
+#     for i in list:
+#         if max < i:
+#             max = i
 
-    length = len(list)
+#     length = len(list)
 
-    dictionary = dict()
-    dictionary['sum'] = sum
-    dictionary['average'] = average
-    dictionary['minimum'] = min
-    dictionary['maximum'] = max
-    dictionary['length'] = length
+#     dictionary = dict()
+#     dictionary['sum'] = sum
+#     dictionary['average'] = average
+#     dictionary['minimum'] = min
+#     dictionary['maximum'] = max
+#     dictionary['length'] = length
     
-    return(dictionary)
-print(ultimate([1,2,3,4,100]))
+#     return(dictionary)
+# print(ultimate([1,2,3,4,100]))
 
 #Create a function that takes a list and return that list with values reversed. Do this without creating a second list.
 
-#def reverse(list):
+def reverse(list):
+        return(list[::-1])
+    
+my_list = [1,2,3,4,5]
+print(reverse(my_list))
