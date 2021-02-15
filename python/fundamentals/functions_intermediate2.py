@@ -19,23 +19,24 @@
 # print(z)
 
 students = [
-        {'first_name':  'Michael', 'last_name' : 'Jordan'},
+        {'first_name' : 'Michael', 'last_name' : 'Jordan'},
         {'first_name' : 'John', 'last_name' : 'Rosales'},
         {'first_name' : 'Mark', 'last_name' : 'Guillen'},
         {'first_name' : 'KB', 'last_name' : 'Tonel'}
     ]
 
-def iterateDictionary(some_list):
+# def iterateDictionary(some_list):
+#     for i in range (len(some_list)):
+#         name_dict = some_list[i]
+#         for key, value in name_dict.items():
+#             print(key, ':', value)
+#iterateDictionary(students)
+
+def iterateDictionary2(key_name, some_list):
+    x = key_name
     for i in range (len(some_list)):
         name_dict = some_list[i]
         for key, value in name_dict.items():
-            print(key, ':', value)
-        #print(lname)
-        #print(some_list[i])
-iterateDictionary(students)
-# should output: (it's okay if each key-value pair ends up on 2 separate lines;
-# bonus to get them to appear exactly as below!)
-# first_name - Michael, last_name - Jordan
-# first_name - John, last_name - Rosales
-# first_name - Mark, last_name - Guillen
-# first_name - KB, last_name - Tonel
+            if key == x:
+                print(value)
+iterateDictionary2('first_name', students)
