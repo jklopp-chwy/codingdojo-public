@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3",
+    "python.pythonPath": "python/my_environments/djangoPy3Env/bin/python3",
     "code-runner.executorMap": {
         "python": "$pythonPath -u $fullFileName",
     }
