@@ -1,0 +1,36 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#wrapper {
+    background-color: gray;
+    height: 700px;
+    width: 970px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+#top {
+    width: 500px;
+    margin-left: 200px;
+    background-color: black;
+    padding: 20px;
+}
+
+#top h4 {
+    margin-left: 150px;
+}
+
+#main {
+    width: 700px;
+    margin-left: 100px;
+    margin-top: 30px;
+    background-color: white;
+    padding: 50px;
+    color: black;
+}
+
+#main h1 {
+    margin-left: 180px;
+}
