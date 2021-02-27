@@ -12,5 +12,6 @@ def result(request):
         "lname": request.POST["lname"],
         "dojos": request.POST["dojos"],
         "gender": request.POST["gender"],
+        "food": request.POST.getlist("food[]")
     }
     return render(request, "result.html", context)
