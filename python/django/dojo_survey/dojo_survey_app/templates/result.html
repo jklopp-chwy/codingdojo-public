@@ -10,10 +10,16 @@
 </head>
 <body>
     <p>Results</p>
-    <h1>your first name = {{fname}}</h1>
-    <h1>your last name = {{lname}}</h1>
-    <h1>your dojo = {{dojos}}</h1>
-    <h1>your gender = {{gender}}</h1>
-    <h1>your favorite food = {{food}}</h1>
+    <h1>your first name = {{request.session.fname}}</h1>
+    <h1>your last name = {{request.session.lname}}</h1>
+    <h1>your dojo = {{request.session.dojos}}</h1>
+    <h1>your gender = {{request.session.gender}}</h1>
+    <h1>your favorite food = {{request.session.food}}</h1>
+    <h1> name in session is = {{request.session.fname}}</h1>
+    <h1> time in session is = {{request.session.counter}}</h1>
+    <form action ="/index" method="post">
+        {% csrf_token %}
+        <input type="submit"/ value="Go Back">
+    </form>
 </body>
 </html>

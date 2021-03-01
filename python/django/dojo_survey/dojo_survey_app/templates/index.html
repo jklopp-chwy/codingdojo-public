@@ -27,14 +27,14 @@
         </select>
 
         <p>Please select your gender:</p>
-        <input type="radio" id="male" name="gender" value="male">
+        <input type="radio" id="male" name="gender" value="male" required>
         <label for="male">Male</label><br>
-        <input type="radio" id="female" name="gender" value="female">
+        <input type="radio" id="female" name="gender" value="female" required>
         <label for="female">Female</label><br>
-        <input type="radio" id="other" name="gender" value="other">
+        <input type="radio" id="other" name="gender" value="other" required>
         <label for="other">Other</label>
 
-        <p>PLease select your favorite foods</p>
+        <p>Please select your favorite foods</p>
         <input type="checkbox" id="food1" name="food[]" value="Pizza">
         <label for="food1"> Pizza </label><br>
         <input type="checkbox" id="food2" name="food[]" value="Hamburger">
@@ -44,6 +44,17 @@
     <br>  
     <br>
     <input type="submit" value="Submit">
+    <br>
+    <br>
+    <br>
+    <p>!Session Data!</p>
+    <h1>your first name = {{request.session.fname}}</h1>
+    <h1>your last name = {{request.session.lname}}</h1>
+    <h1>your dojo = {{request.session.dojos}}</h1>
+    <h1>your gender = {{request.session.gender}}</h1>
+    <h1>your favorite food = {{request.session.food}}</h1>
+    <h1> name in session is = {{request.session.fname}}</h1>
+    <h1> time in session is = {{request.session.counter}}</h1>
     </form> 
 </body>
 </html>
