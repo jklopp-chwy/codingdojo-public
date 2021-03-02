@@ -13,4 +13,6 @@ c.save()
 c = Users.objects.get(id=2)
 c.delete()
 
-Users.objects.all().order_by("first_name")
+Users.objects.all().order_by("-first_name")
+
+Users.objects.all().order_by("-first_name")
