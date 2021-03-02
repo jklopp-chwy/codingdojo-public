@@ -1,26 +1,3 @@
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    email_address = models.CharField(max_length=255)
-    age = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
-
-#insert
-ClassName.objects.create(field1="value for field1", field2="value for field2", etc.)
-#select
-ClassName.objects.all() 
-ClassName.objects.first() - gets the first record in the table
-ClassName.objects.last() - gets the last record in the table
-#update 
-c = ClassName.objects.get(id=1)
-c.field_name = "some new value for field_name"
-c.save()
-#delete
-c = ClassName.objects.get(id=1)
-c.delete()
-#sorting
-ClassName.objects.all().order_by("field_name")
-
 user1 = Users.objects.create(first_name="Jackson", last_name = "Klopp", email_address="jacksonklopp@gmail.com",age = 27)
 user2 = Users.objects.create(first_name="Michelle", last_name = "Klopp", email_address="michelle@gmail.com",age = 28)
 user3 = Users.objects.create(first_name="Riley", last_name = "Klopp", email_address="riley@gmail.com",age = 2)
