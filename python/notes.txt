@@ -4,7 +4,7 @@ from your_app_name_here.models import *
 
 python manage.py migrate
 python3 -m venv djangoPy3Env
-source djangoPy3Env/bin/activate
+
 pip install Django==2.2 
 django-admin startproject your_project_name_here
 python manage.py startapp your_app_name_here

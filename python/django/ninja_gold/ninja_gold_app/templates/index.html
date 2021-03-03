@@ -9,10 +9,34 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">    
 </head>
 <body>
-    <h1>Click the button to start the game!</h1>
+    <h1>Your Gold {{request.session.gold}}</h1>
+    <br>
     <form action="/process_money" method="post">
         {% csrf_token %}
-    <input type="submit" value="Start!">
-    </form> 
+        <p>Earns 10-20 Gold</p>
+    <input type="hidden" name="location" value="farm">
+    <input type="submit" value="Farm">
+    </form>
+    
+    <form action="/process_money" method="post">
+        {% csrf_token %}
+        <p>Earns 5-10 Gold</p>
+    <input type="hidden" name="location" value="cave">
+    <input type="submit" value="Cave">
+    </form>
+
+    <form action="/process_money" method="post">
+        {% csrf_token %}
+        <p>Earns 2-5 Gold</p>
+    <input type="hidden" name="location" value="house">
+    <input type="submit" value="House">
+    </form>
+
+    <form action="/reset" method="post">
+        {% csrf_token %}
+        <p>Reset Game</p>
+    <input type="submit" value="Reset">
+    </form>
+    <h1>History: {{request.session.message}}</h1>
 </body>
 </html>
