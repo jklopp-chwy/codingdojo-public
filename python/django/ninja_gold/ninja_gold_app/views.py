@@ -20,7 +20,7 @@ gold_values = {
 def index(request):
     if not "gold" in request.session or "message" in request.session:
         request.session['gold'] = 0
-        request.session['message'] = "welcome to ninja gold"
+        request.session['message'] = ["welcome to ninja gold"]
     return render(request, 'index.html')
 
 def reset(request):
@@ -28,15 +28,29 @@ def reset(request):
     return redirect('/')
 
 def process_money(request):
-    message_log = request.POST['message']
-    gold_location = request.POST['location']
-    gold_range = gold_values[gold_location]
-    gold_amount = random.randint(gold_range[0],gold_range[1])
+    gold_location = request.POST['location'] #sets location 
+    gold_range = gold_values[gold_location] #gets int range from location
+    gold_amount = random.randint(gold_range[0],gold_range[1]) #selects random int from range
+    message_log = [f"you earned {gold_amount}!"]
 
-
+    #redirect if get
     if request.method == 'GET':
         return redirect('/')
+    #handling casino
+    if gold_location == 'casino':
+        gold_amount = gold_amount * random.randint(-1,1)
+        #if you lose money
+        if gold_amount < 0:
+            message_log = [f"you lost {gold_amount}!"]
+            request.session['gold'] += gold_amount
+            request.session['message'].append(message_log)
+        #if you win money
+        else:
+            message_log = [f"you earned {gold_amount}!"]
+            request.session['gold'] += gold_amount
+            request.session['message'].append(message_log)
+    #if any other location besides casino
     else:
         request.session['gold'] += gold_amount
-        request.session['message'] = message_log.append()
+        request.session['message'].append(message_log)
     return render(request,'index.html')
