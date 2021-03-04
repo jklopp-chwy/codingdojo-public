@@ -1,3 +1,5 @@
+source djangoPy3Env/bin/activate  
+
 #django shell
 python manage.py shell
 from your_app_name_here.models import *
