@@ -11,7 +11,8 @@ def index(request):
     return render(request, 'index.html', context)
 
 def reset(request):
-    request.session.clear()
+    delete_user = Users.objects.all()
+    delete_user.delete()
     return redirect('/')
 
 def add_user(request):

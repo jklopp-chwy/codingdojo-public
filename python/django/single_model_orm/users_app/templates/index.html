@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+</head>
+<body>
+    <h1>All Users</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+        {% for Users in all_the_users %}
+        <tr>
+            <td>{{ Users.first_name }} {{ Users.last_name }}</td>
+            <td>{{ Users.email_address }}</td>
+            <td>{{ Users.age }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p></p>
+    
+    <hr>
+    <form action="/add_user" method="post">
+        {% csrf_token %}
+        <h4>Add User</h4>
+        <label for="first_name">First name:</label>
+        <input type="text" id="first_name" name="first_name"><br><br>
+        <label for="last_name">Last name:</label>
+        <input type="text" id="last_name" name="last_name"><br><br>
+        <label for="email_address">Email:</label>
+        <input type="text" id="email_address" name="email_address"><br><br>
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age"><br>
+        <br>
+        <input type="submit" value="Add">
+    </form>
+    <br>
+    <h4>Delete all Users</h4>
+    <form action="/reset" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Reset">
+    </form>
+</body>
+</html>
