@@ -1,0 +1,41 @@
+Dojos.objects.all()
+Ninjas.objects.all()
+
+dojo1 = Dojos.objects.create(name="seattle dojo", city="seattle", state="wa")
+dojo2 = Dojos.objects.create(name="new york dojo", city="new york", state="ny")
+dojo3 = Dojos.objects.create(name="austin dojo", city="austin", state="tx")
+
+delete_dojo = Dojos.objects.all()
+delete_dojo.delete()
+
+dojo1 = Dojos.objects.create(name="seattle dojo", city="seattle", state="wa")
+dojo2 = Dojos.objects.create(name="new york dojo", city="new york", state="ny")
+dojo3 = Dojos.objects.create(name="austin dojo", city="austin", state="tx")
+
+Create 3 ninjas that belong to the second dojo
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=7),first_name = "jackson",last_name="klopp")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=7),first_name = "Riley",last_name="klopp")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=7),first_name = "Roen",last_name="klopp")
+
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=8),first_name = "john",last_name="smith")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=8),first_name = "steve",last_name="doe")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=8),first_name = "kevin",last_name="smithy")
+
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=9),first_name = "mike",last_name="rara")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=9),first_name = "bill",last_name="franklin")
+Ninjas.objects.create(dojo_id = Dojos.objects.get(id=9),first_name = "ron",last_name="jordan")
+
+Ninjas.objects.filter(dojo_id=Dojos.objects.get(id=7))
+Ninjas.objects.filter(dojo_id=Dojos.objects.get(id=8))
+Ninjas.objects.filter(dojo_id=Dojos.objects.get(id=9))
+
+Ninjas.objects.filter(dojo_id=Dojos.objects.last())
+
+last_ninja = Ninjas.objects.last()
+
+last_ninja.dojo_id
+
+dojo4 = Dojos.objects.create(name="florida dojo", city="miami", state="fl", desc="florida dojo")
+
+
+
