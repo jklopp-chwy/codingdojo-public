@@ -1,0 +1,37 @@
+Books.objects.all()
+Authors.objects.all()
+
+Books.objects.create(title="C Sharp", desc="book about C Sharp")
+Books.objects.create(title="Java", desc="book about Java")
+Books.objects.create(title="Python", desc="book about Python")
+Books.objects.create(title="Php", desc="book about Php")
+Books.objects.create(title="Ruby", desc="book about Ruby")
+
+Authors.objects.create(first_name="Jane", last_name="Austen")
+Authors.objects.create(first_name="Emily", last_name="Dickinson")
+Authors.objects.create(first_name="Fyodor", last_name="Dostoevsky")
+Authors.objects.create(first_name="William", last_name="Sharkespeare")
+Authors.objects.create(first_name="Lau", last_name="Tzu")
+
+c = Books.objects.get(title="C Sharp")
+c.title = "C#"
+c.save()
+
+q = Authors.objects.get(id="4")
+q.first_name = "Bill"
+q.save()
+
+assign_book = Books.objects.get(id=2)
+assign_author = Authors.objects.get(id=5)
+
+assign_author.books.add(assign_book)
+assign_author.books.remove(assign_book)
+
+assign_book = Books.objects.get(id=3)
+assign_book.titles.all()
+
+assign_author = Authors.objects.get(id=3)
+assign_author.books.all()
+
+assign_book = Books.objects.get(id=5)
+assign_book.titles.all()
