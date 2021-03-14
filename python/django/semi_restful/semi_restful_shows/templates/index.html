@@ -30,15 +30,15 @@
             <th>{{show.release_date}}</th>
             <th>
                 <a href="/shows/{{show.id}}">Show</a>
-                <a href="/shows/{{show.id}}/edit">Edit</a>
+                <a href="/shows/{{show.id}}/edit_show">Edit</a>
                 <form action="shows/{{show.id}}/delete" method="POST">
                     {%csrf_token%}
                     <button type="submit">Delete</button>
                 </form>
-
             </th>
         </tr>
         {% endfor %}
     </table>
+    <a href="/shows/new_show">Add a new show</a>
 </body>
 </html>
