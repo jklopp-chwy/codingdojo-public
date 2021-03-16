@@ -40,5 +40,13 @@
         {% endfor %}
     </table>
     <a href="/shows/new_show">Add a new show</a>
+
+    {% if messages %}
+    <ul classcopy="messages">    
+    {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+    </ul>
+{% endif %}
 </body>
 </html>
