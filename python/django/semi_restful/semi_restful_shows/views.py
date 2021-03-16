@@ -48,4 +48,4 @@ def edit(request, id):
         show.network = request.POST['network'],
         show.release_date = request.POST['release_date']
         show.save()
-    return render(request, 'show.html')
+    return redirect(f"/shows/{id}")
