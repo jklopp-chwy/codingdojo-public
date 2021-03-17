@@ -40,4 +40,4 @@ c.save()
 c = ClassName.objects.get(id=1)
 c.delete()
 #sorting
-ClassName.objects.all().order_by("field_name")
+ClassName.objects.all().order_by("field_name") 
