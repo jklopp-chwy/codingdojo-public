@@ -1,4 +1,5 @@
 from django.db import models, IntegrityError
+import bcrypt
 
 
 # Create your models here.
@@ -22,12 +23,15 @@ class RegisterManager(models.Manager):
 
     def login_validator(self, postData):
         login_errors = {}
-        ##checks to see if password matches
+        ##is user in database?
         returning_user = postData['email_address']
         existing_user = Register.objects.filter(email_address = returning_user).first()
+        ##if user exists:
         if existing_user:
+            #if user exists, but password is incorrect
             if existing_user.password != postData['password']:
                 login_errors["password_check"] = "Password is invalid"
+        #if user does not exist:
         else:
             login_errors["user_check"] = "User is invalid"
         return login_errors

@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from .models import Register, RegisterManager
 from django.contrib import messages
 from django.core.exceptions import ValidationError
+import bcrypt
+
+
+
 
 def home(request):
     return render(request, 'index.html')
@@ -19,9 +23,8 @@ def login(request):
             messages.error(request, value)
         return redirect('/')
     else:
-        #request.session['first_name'] = request.POST['email_address']
         email_address = request.POST['email_address']
-        request.session['first_name'] = Register.objects.get['email_address']
+        request.session['first_name'] = request.POST['email_address']
     return render(request, 'success.html')
 
 def register(request):
@@ -33,11 +36,12 @@ def register(request):
             messages.error(request, value)
         return redirect('/')
     else:
+        #pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
         new_user = Register.objects.create(
-        first_name=request.POST['first_name'], 
-        last_name =request.POST['last_name'],
-        email_address=request.POST['email_address'], 
-        password=request.POST['password']
+            first_name=request.POST['first_name'], 
+            last_name =request.POST['last_name'],
+            email_address=request.POST['email_address'], 
+            password=request.POST['password']
         )
         request.session['first_name'] = request.POST['first_name']
     return render(request, 'success.html')
