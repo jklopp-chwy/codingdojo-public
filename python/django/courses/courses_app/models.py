@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class courseManager(models.Manager):
+class CourseManager(models.Manager):
     def basic_validator(self, postData):
         errors = {}
         # add keys and values to errors dictionary for each invalid field
@@ -12,9 +12,9 @@ class courseManager(models.Manager):
             errors["description"] = "description should be at least 15 characters"
         return errors
 
-class course(models.Model):
+class Course(models.Model):
     name = models.CharField(max_length=45)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    objects = courseManager()
+    objects = CourseManager()
