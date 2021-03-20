@@ -5,39 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Register</title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    Login and Register Page
-    <form action="/register" method="post">
-        {% csrf_token %}
-        <h4>New User</h4>
-        <label for="first_name">first name:</label>
-        <input type="text" id="first_name" name="first_name" required ><br><br>
-        <label for="last_name">last name:</label>
-        <input type="text" id="last_name" name="last_name" required><br><br>
-        <label for="email_address">email address:</label>
-        <input type="text" id="email_address" name="email_address" required><br><br>
-        <label for="password">password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <label for="confirm_password">confirm password:</label>
-        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
-        <input type="submit" value="Register">
-    </form>
-    {% if messages %}
-        <ul classcopy="messages">    
-        {% for message in messages %}    
-            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <form action="/login" method="post">
-        {% csrf_token %}
-        <h4>Login</h4>
-        <label for="email_address">email address:</label>
-        <input type="text" id="email_address" name="email_address" required><br><br>
-        <label for="password">password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Login">
-    </form>
+    <h1>Login and Register Page</h1>
+    <div id = "new">
+        <form action="/register" method="post">
+            {% csrf_token %}
+            <h4>New User</h4>
+            <label for="first_name">first name:</label>
+            <input type="text" id="first_name" name="first_name" required ><br><br>
+            <label for="last_name">last name:</label>
+            <input type="text" id="last_name" name="last_name" required><br><br>
+            <label for="email_address">email address:</label>
+            <input type="text" id="email_address" name="email_address" required><br><br>
+            <label for="password">password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <label for="confirm_password">confirm password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <div id="login">
+        <form action="/login" method="post">
+            {% csrf_token %}
+            <h4>Login</h4>
+            <label for="email_address">email address:</label>
+            <input type="text" id="email_address" name="email_address" required><br><br>
+            <label for="password">password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <div id = "errors">
+        {% if messages %}
+            <ul classcopy="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
 </body>
 </html>

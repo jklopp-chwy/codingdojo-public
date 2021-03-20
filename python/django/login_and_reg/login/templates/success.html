@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
 </head>
 <body>
     <h1>Success!, Welcome {{request.session.first_name}}</h1>
     <p>Successfully registered (or logged in)!</p>
     <p><a href="/logout">Logout</a></p>
+
+    <h2>Post a Message:</h2>
+        <form action="/post" method=POST>
+            {% csrf_token %}
+            <input type="text" name="message">
+            <input type="submit" value="post">
+        </form>
+
+    <h2>Posts:</h2>
+    {% for post in messages %}    
+        <p> User: {{post.poster.first_name}} - {{post.created_at}}</p>
+        <p> Message: {{post.message}}</p><br>
+        <form action="/comment/{{post.id}}" method=POST>
+            {% csrf_token %}
+            Comment: <input type="text" name='comment'>
+            <input type="submit" value='submit'>
+        </form>
+            {% for comment in post.post_comments.all %}    
+                <p> User: {{comment.poster.first_name}} - {{comment.created_at}}</p>
+                <p> Comment: {{comment.comment}}</p><br>
+            {% endfor %}
+
+    {% endfor %}
+    <p><a href="/delete_all">Delete all posts and comments!</a></p>
 </body>
 </html>

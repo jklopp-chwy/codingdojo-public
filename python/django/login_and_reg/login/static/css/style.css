@@ -1,0 +1,17 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+#new {
+    display: inline-block;
+    justify-content: space-between;
+}
+#login {
+    display: inline-block;
+    justify-content: space-between;
+    margin-left: 400px;
+    margin-top: 10px;
+}
+#errors{
+    color: red;
+}
