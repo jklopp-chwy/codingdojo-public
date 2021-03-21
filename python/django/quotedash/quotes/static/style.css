@@ -1,0 +1,39 @@
+/*CSS RESET*/
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul.messages {
+    list-style: none;
+}
+li.error {
+    color: red;
+}
+li.success {
+    color: green;
+}
+
+.header h1,h2 { 
+    display: inline-block;
+}
+
+.header h1 {
+    width: 300px;
+}
+
+.header h2 {
+    margin-left: 500px;
+    width: 100px;
+}
+
+.quotes p {
+    margin-left: 700px;
+}
+
+#edit input[type="text"] {
+    width:300px
+}
+
+
