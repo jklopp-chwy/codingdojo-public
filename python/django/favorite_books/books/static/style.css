@@ -1,0 +1,49 @@
+/*CSS RESET*/
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+/*Wrapper and Header*/
+#wrapper {
+    background-color: white; 
+}
+#log-reg {
+    display: flex;
+    justify-content: space-between;
+}
+#log-reg > section {
+    width: 50%;
+    margin: 0 2em;
+}
+ul.messages {
+    list-style: none;
+}
+li.error {
+    color: red;
+}
+li.success {
+    color: green;
+}
+
+.header h1, h2{
+    display: inline-block;
+}
+
+.header h2 {
+    margin-left: 300px;
+}
+
+#add, #books {
+    margin-left: 15px;
+}
+
+#add {
+    width: 300px;
+}
+
+#books {
+    margin-left: 500px;
+}
+
+
