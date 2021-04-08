@@ -1,8 +1,8 @@
-# def pushFront(li, num):
-#     x = [num] + li
-#     return x
+def pushFront(li, num):
+    x = [num] + li
+    return x
 
-# print(pushFront([1,2,3], 0))
+print(pushFront([1,2,3], 0))
 
 # def popFront(li):
 #     x = li[0]
@@ -18,3 +18,18 @@
 
 # print(insertAt([1,2,3], 0, 2))
 
+# def removeAt(li, num):
+#     x = li[num]
+#     num = num
+#     li.pop(num)
+#     return x, li
+# print(removeAt([1,2,3], 2))
+
+# def removeDups(li):
+#     arr = []
+#     for i in li:
+#         if i != li[i]:
+#             arr.append(i)
+#     return arr
+
+# print(removeDups([1,1,2,2,3]))
