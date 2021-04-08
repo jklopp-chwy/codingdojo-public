@@ -1,10 +1,12 @@
 def minToFront(li):
     min = li[0]
+    count = 0
     for i in li:
         if min > i:
             min = i
-    li.pop(min)
+            count = count + 1
     li.insert(0,min)
-    return li
+    li.pop(count+1)
+    return li, count
 
-print(minToFront([2,1,5]))
+print(minToFront([4,2,1,3,5]))
