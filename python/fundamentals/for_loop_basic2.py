@@ -49,13 +49,13 @@
 
 # Create a function that takes a list of numbers and returns the minimum value in the list. If the list is empty, have the function return False.
 # def minimum(list):
-#     min = list[0]
-#     for i in list:
-#         if min > i:
-#             min = i
-#     return min
+#         min = list[0]
+#         for i in list:
+#                 if min > i:
+#                         min = i
+#                 return min
 
-# print(minimum([2,1,5]))
+# print(minimum([10,1,5]))
 
 #Create a function that takes a list and returns the maximum value in the array. If the list is empty, have the function return False.
 # def maximum(list):
