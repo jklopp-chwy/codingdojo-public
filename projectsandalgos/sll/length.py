@@ -57,7 +57,7 @@ class LinkedList(object):
         if current is None:
             print("Not found")
         return current
-
+#length
     def length(self):
         current = self.head
         count = 0
@@ -71,14 +71,11 @@ print("inserting")
 print(myList.addFront(5))
 print(myList.addFront(15))
 print(myList.addFront(25))
-print("Printing")
-myList.printNode()
+
 print("length")
 print(myList.length())
 print("deleting")
 print(myList.removeFront(5))
-print("Printing")
-myList.printNode()
 print("length")
 print(myList.length())
 print(myList.front())

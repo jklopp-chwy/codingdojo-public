@@ -45,18 +45,6 @@ class LinkedList(object):
         current = self.head
         return current.data
 
-#contains
-    def search(self, data):
-        current = self.head
-        found = False
-        while current and found is False:
-            if current.get_data() == data:
-                found = True
-            else:
-                current = current.get_next()
-        if current is None:
-            print("Not found")
-        return current
 
 
 myList = LinkedList()
@@ -72,5 +60,3 @@ print(myList.removeFront(5))
 
 print("Size")
 print(myList.front())
-print("is the value below in the list?")
-print(myList.search(1))
