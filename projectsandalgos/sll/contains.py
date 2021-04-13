@@ -58,36 +58,18 @@ class LinkedList(object):
             print("Not found")
         return current
 
-    def size(self):
-        current = self.head
-        count = 0
-        while current:
-            count += 1
-            current = current.get_next()
-        return count
-
-    def printNode(self):
-       curr = self.head
-       while curr:
-           print(curr.data)
-           curr = curr.get_next()
-
 
 myList = LinkedList()
 print("inserting")
 print(myList.addFront(5))
 print(myList.addFront(15))
 print(myList.addFront(25))
-print("Printing")
-myList.printNode()
-print("Size")
-print(myList.size())
+
+
 print("deleting")
 print(myList.removeFront(5))
-print("Printing")
-myList.printNode()
-print("Size")
-print(myList.size())
+
+
 print(myList.front())
 print("is the value below in the list?")
 print(myList.search(1))
