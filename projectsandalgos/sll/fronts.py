@@ -45,14 +45,7 @@ class LinkedList(object):
         current = self.head
         return current.data
 
-    def size(self):
-        current = self.head
-        count = 0
-        while current:
-            count += 1
-            current = current.get_next()
-        return count
-
+#contains
     def search(self, data):
         current = self.head
         found = False
@@ -62,8 +55,16 @@ class LinkedList(object):
             else:
                 current = current.get_next()
         if current is None:
-            raise ValueError("Data not in list")
+            print("Not found")
         return current
+
+    def size(self):
+        current = self.head
+        count = 0
+        while current:
+            count += 1
+            current = current.get_next()
+        return count
 
     def printNode(self):
        curr = self.head
@@ -88,3 +89,5 @@ myList.printNode()
 print("Size")
 print(myList.size())
 print(myList.front())
+print("is the value below in the list?")
+print(myList.search(1))
