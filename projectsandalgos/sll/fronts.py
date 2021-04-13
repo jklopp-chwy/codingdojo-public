@@ -17,10 +17,33 @@ class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
 
-    def front(self, data):
+##front
+    def addFront(self, data):
         new_node = Node(data)
         new_node.set_next(self.head)
         self.head = new_node
+
+#remove front
+    def removeFront(self, data):
+        current = self.head
+        previous = None
+        found = False
+        while current and found is False:
+            if current.get_data() == data:
+                found = True
+            else:
+                previous = current
+                current = current.get_next()
+        if current is None:
+            raise ValueError("Data not in list")
+        if previous is None:
+            self.head = current.get_next()
+        else:
+            previous.set_next(current.get_next())
+#front
+    def front(self):
+        current = self.head
+        return current.data
 
     def size(self):
         current = self.head
@@ -48,28 +71,12 @@ class LinkedList(object):
            print(curr.data)
            curr = curr.get_next()
 
-    def removeFront(self, data):
-        current = self.head
-        previous = None
-        found = False
-        while current and found is False:
-            if current.get_data() == data:
-                found = True
-            else:
-                previous = current
-                current = current.get_next()
-        if current is None:
-            raise ValueError("Data not in list")
-        if previous is None:
-            self.head = current.get_next()
-        else:
-            previous.set_next(current.get_next())
 
 myList = LinkedList()
 print("inserting")
-print(myList.front(5))
-print(myList.front(15))
-print(myList.front(25))
+print(myList.addFront(5))
+print(myList.addFront(15))
+print(myList.addFront(25))
 print("Printing")
 myList.printNode()
 print("Size")
@@ -80,3 +87,4 @@ print("Printing")
 myList.printNode()
 print("Size")
 print(myList.size())
+print(myList.front())
