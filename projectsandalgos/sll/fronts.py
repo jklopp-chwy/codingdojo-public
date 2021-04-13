@@ -40,6 +40,7 @@ class LinkedList(object):
             self.head = current.get_next()
         else:
             previous.set_next(current.get_next())
+            
 #front
     def front(self):
         current = self.head

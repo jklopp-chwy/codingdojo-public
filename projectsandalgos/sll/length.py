@@ -57,6 +57,7 @@ class LinkedList(object):
         if current is None:
             print("Not found")
         return current
+        
 #length
     def length(self):
         current = self.head

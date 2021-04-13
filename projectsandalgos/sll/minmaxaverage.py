@@ -57,7 +57,6 @@ class LinkedList(object):
         if current is None:
             print("Not found")
         return current
-
 #length
     def length(self):
         current = self.head
@@ -76,12 +75,47 @@ class LinkedList(object):
             curr = curr.get_next()
         print(myStr)
 
-myList = LinkedList()
+#max
+    def max(self):
+        curr = self.head
+        max = curr.data
+        while curr:
+            if curr.data > max:
+                max = curr.data
+            curr = curr.get_next()
+        print(max)
 
+#min 
+    def min(self):
+        curr = self.head
+        min = curr.data
+        while curr:
+            if curr.data < min:
+                min = curr.data
+            curr = curr.get_next()
+        print(min)
+
+#average
+    def average(self):
+        curr = self.head
+        sum = 0
+        count = 0
+        while curr:
+            sum = sum + curr.data
+            count = count + 1
+            curr = curr.get_next()
+        avg = sum/count
+        print(avg)
+
+myList = LinkedList()
 myList.addFront(5)
 myList.addFront(15)
 myList.addFront(25)
 myList.addFront(50)
+myList.addFront(300)
 myList.addFront(100)
 print("Printing")
 myList.display()
+myList.max()
+myList.min()
+myList.average()
